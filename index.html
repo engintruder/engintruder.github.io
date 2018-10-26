@@ -318,7 +318,7 @@
                                 <option value="si">위성정보처리(A반)</option>
                                 <option value="gp">그래픽정보처리(N반)</option>
                             </select>
-                            <label for="number">학번+휴대폰번호 마지막 4자리</label><input type="text" id="number"/>
+                            <label for="number">학번</label><input type="text" id="number"/>
                             <label for="password">비밀번호(초기비밀번호 휴대폰번호 마지막 4자리)</label><input type="password" id="password"/>
                             <a href="#"  class="button style1" onclick="loading()" style="width:100%;">결과 보기</a>
                         </form>
@@ -433,18 +433,18 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
             <script>
-                var name= $('#name');
-                var mid = $('#mid');
-                var final = $('#final');
-                var homework1 = $('#homework1');
-                var attend = $('#attend');
-                var total = $('#total');
                 
                 function loading(){
                     
                     var className = $('#className').val();
                     var number = $('#number').val();
-                    var password = $('#password').val();
+                    var password = $('#password').val(); 
+                    var name= $('#name');
+                    var mid = $('#mid');
+                    var final = $('#final');
+                    var homework1 = $('#homework1');
+                    var attend = $('#attend');
+                    var total = $('#total');
                     
                     name.html("");
                     mid.html("");
@@ -479,8 +479,8 @@
                 
                 function change(){
                     var number = $('#number').val();
-                    var beforePW = $('#beforePW').val('');
-                    var afterPW = $('#afterPW').val('');
+                    var beforePW = $('#beforePW').val();
+                    var afterPW = $('#afterPW').val();
                     
                     $.ajax({
                         url : 'http://seoul.engintruder.com/lecture/api/' + className + '/' + number + '/' + beforePW + '/' + afterPW,
