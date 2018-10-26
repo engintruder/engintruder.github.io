@@ -320,7 +320,7 @@
                             </select>
                             <label for="number">학번</label><input type="text" id="number"/>
                             <label for="password">비밀번호(초기비밀번호 휴대폰번호 마지막 4자리)</label><input type="password" id="password"/>
-                            <a href="#"  class="button style1" onclick="loading()" style="width:100%;">결과 보기</a>
+                            <a class="button style1" onclick="loading()" style="width:100%;">결과 보기</a>
                         </form>
                         <div id="result" style="display:none;">
                             <div>
@@ -354,7 +354,7 @@
                             <div id="ap" style="display:none;">
                                 <label for="beforePW">기존 비밀번호</label><input type="password" id="beforePW"/>
                                 <label for="afterPW">새로운 비밀번호</label><input type="password" id="afterPW"/>
-                                <a href="#"  class="button style1" onclick="change()" style="width:100%;">비밀번호 변경하기</a> 
+                                <a class="button style1" onclick="change()" style="width:100%;">비밀번호 변경하기</a> 
                             </div>
                         </form>
 					</div>
@@ -459,11 +459,15 @@
                     $('#afterPW').val('');
                     $.ajax({ 
                         url : 'http://seoul.engintruder.com/lecture/api/' + className + '/' + number + '/' + password,
+                 //              url : 'http://localhost:8080/api/' + className + '/' + number + '/' + password,
                         type : 'GET',
                         success : function(res){
-                            console.log(res);
-                            $('#result').css('display', 'display');
-                            $('#ap').css('display', 'display');
+                            if ((res).hasOwnProperty('message')){
+                                alert(res.message);
+                                return 0;
+                            }                            
+                            $('#result').css('display', 'block');
+                            $('#ap').css('display', 'block');
                             name.html(res.name);
                             mid.html(res.midEx);
                             final.html(res.finalEx);
@@ -473,6 +477,7 @@
                         },
                         error : function(err){
                             console.log(err);
+                            alert("수업종류/아이디/비밀번호를 다시 확인하세요");
                         } 
                     });
                 }
@@ -481,15 +486,26 @@
                     var number = $('#number').val();
                     var beforePW = $('#beforePW').val();
                     var afterPW = $('#afterPW').val();
+                    var className = $('#className').val();
                     
                     $.ajax({
                         url : 'http://seoul.engintruder.com/lecture/api/' + className + '/' + number + '/' + beforePW + '/' + afterPW,
+                        //url : 'http://localhost:8080/api/' + className + '/' + number + '/' + beforePW + '/' + afterPW,
                         type : 'PUT',
                         success : function(res){
-                            console.log(res);
+                            if ((res).hasOwnProperty('message')){
+                                alert("기존 비밀번호가 다릅니다.");
+                                return 0;
+                            }              
+                            if (res == 1){
+                                alert('비밀번호가 변경되었습니다');
+                                $('#beforePW').val('');
+                                $('#afterPW').val('');
+                            }
                         },
                         error : function(err){
                             console.log(err);
+                            alert("기존 비밀번호가 다릅니다.");
                         } 
                     });
                     
