@@ -446,12 +446,12 @@
                     var number = $('#number').val();
                     var password = $('#password').val();
                     
-                    name.text("");
-                    mid.text("");
-                    final.text("");
-                    homework1.text("");
-                    attend.text("");
-                    total.text("");
+                    name.html("");
+                    mid.html("");
+                    final.html("");
+                    homework1.html("");
+                    attend.html("");
+                    total.html("");
                     
                     $('#result').css('display', 'none');
                     $('#ap').css('display', 'none');
@@ -464,12 +464,12 @@
                             console.log(res);
                             $('#result').css('display', 'display');
                             $('#ap').css('display', 'display');
-                            name.text(res.name);
-                            mid.text(res.midEx);
-                            final.text(res.finalEx);
-                            homework1.text(res.homework1);
-                            attend.text(res.attendance);
-                            total.text(res.total);
+                            name.html(res.name);
+                            mid.html(res.midEx);
+                            final.html(res.finalEx);
+                            homework1.html(res.homework1);
+                            attend.html(res.attendance);
+                            total.html(res.total);
                         },
                         error : function(err){
                             console.log(err);
