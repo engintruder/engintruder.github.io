@@ -87,7 +87,7 @@
 				<!-- Logo -->
 				<div id="logo">
 					<h1><a href="index.html">Grade</a></h1>
-					<p></p>
+					<p>성적 검색 시스템 수업 시간에 공개 예정</p>
 				</div>
 
 				<!-- Nav -->
@@ -96,19 +96,26 @@
 								<li class="current"><a href="https://lecture.engintruder.com/index.html">Home</a></li> 
 								<li><a href="https://lecture.engintruder.com/gp.html">GP Classroom</a></li>
 								<li><a href="https://lecture.engintruder.com/si.html">SI Classroom</a></li>
-								<li><a href="http://engintruder.com/hansung/grade.html">Grade</a></li>
+                                <li>
+											<a href="#">Grade</a>
+				                    <ul>
+								        <li><a href="http://engintruder.com/hansung/grade_gp.html">GP</a></li>
+								        <li><a href="http://engintruder.com/hansung/grade_si.html">SI</a></li> 
+				                    </ul>
+								</li> 
 					</ul>
 				</nav>
 
-			</section>
-  
+			</section> 
+            
+            <!--
 				<section id="highlights" class="wrapper style3">
-					<div class="title">GP Class(그래픽정보처리)</div>
+					<div class="title">SI Class(위성정보처리)</div>
 					<div class="container">
                         <form> 
                             <label for="number">학번</label><input type="text" id="number"/>
                             <label for="password">비밀번호(초기비밀번호 휴대폰번호 마지막 4자리)</label><input type="password" id="password"/>
-                            <a class="button style1" onclick="loading()" style="width:100%;">결과 보기</a>
+                            <a class="button style1" onclick="loading('si')" style="width:100%;">결과 보기</a>
                         </form>
                         <div id="result" style="display:none;">
                             <div>
@@ -147,6 +154,10 @@
                         </form>
 					</div>
 				</section>  
+             
+            -->
+             
+            
 			<!-- Footer -->
 			<section id="footer" class="wrapper">
 				<div class="title">Contact</div>
@@ -247,9 +258,9 @@
 			<script src="assets/js/main.js"></script>
             <script>
                 
-                function loading(){
+                function loading(type){
                     
-                    var className = 'gp';
+                    var className = type;
                     var number = $('#number').val();
                     var password = $('#password').val(); 
                     var name= $('#name');
@@ -258,7 +269,7 @@
                     var homework1 = $('#homework1');
                     var attend = $('#attend');
                     var total = $('#total');
-                    
+                    console.log("TTT");
                     name.html("");
                     mid.html("");
                     final.html("");
@@ -290,7 +301,7 @@
                         },
                         error : function(err){
                             console.log(err);
-                            alert("수업종류/아이디/비밀번호를 다시 확인하세요");
+                            alert("아이디/비밀번호를 다시 확인하세요");
                         } 
                     });
                 }
