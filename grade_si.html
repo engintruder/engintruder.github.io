@@ -257,6 +257,8 @@
                         url : 'http://seoul.engintruder.com/lecture/api/' + className + '/' + number + '/' + password,
                  //              url : 'http://localhost:8080/api/' + className + '/' + number + '/' + password,
                         type : 'GET',
+                      crossDomain:true,
+					  dataType : 'json',
                         success : function(res){
                             if ((res).hasOwnProperty('message')){
                                 alert(res.message);
