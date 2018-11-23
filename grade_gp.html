@@ -271,13 +271,14 @@
                     var homework1 = $('#homework1');
                     var attend = $('#attend');
                     var total = $('#total');
+                    var note = $('#note');
                     name.html("");
                     mid.html("");
                     final.html("");
                     homework1.html("");
                     attend.html("");
                     total.html("");
-                    
+                    note.html("");
                     $('#result').css('display', 'none');
                     $('#ap').css('display', 'none');
                     $('#beforePW').val('');
@@ -301,6 +302,7 @@
                             homework1.html(res.homework1 + '/29');
                             attend.html(res.attendance + '/10');
                             total.html(res.total + '/100');
+                            note.html(res.note);
                         },
                         error : function(err){
                             console.log(err);
