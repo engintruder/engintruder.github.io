@@ -141,6 +141,14 @@
                                         </tr> 
                                       </tbody>
                                     </table>
+                                    <table class="demo02">
+										<tr>
+											<th>코멘트</th>
+										</tr>
+										<tr>
+											<td id="note"></td>
+										</tr>
+                                    </table>
                                 </section> 
                             </div> 
                         </div>  
@@ -242,12 +250,14 @@
                     var homework1 = $('#homework1');
                     var attend = $('#attend');
                     var total = $('#total');
+                    var note = $('#note');
                     name.html("");
                     mid.html("");
                     final.html("");
                     homework1.html("");
                     attend.html("");
                     total.html("");
+                    note.html("");
                     
                     $('#result').css('display', 'none');
                     $('#ap').css('display', 'none');
@@ -272,6 +282,8 @@
                             homework1.html(res.homework1 + '/29');
                             attend.html(res.attendance + '/10');
                             total.html(res.total + '/100');
+                            
+                            notel.html(res.note + '/100');
                         },
                         error : function(err){
                             console.log(err);
