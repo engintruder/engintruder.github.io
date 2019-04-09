@@ -15,5 +15,4 @@ for (let k=0; k<nodes.children.length; k++){
         event.target.style.backgroundColor = "yellow";
         console.log(k);
     }    
-    
 }
