@@ -1,0 +1,348 @@
+<!DOCTYPE HTML>
+<!--
+	Escape Velocity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>No Sidebar - Escape Velocity by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        		<style>
+			.red{
+				color: orangered;
+				font-weight: bold;
+			}
+			.blue{
+				color: darkblue;
+				font-weight: bold;
+			}
+            table {
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
+            /*====================*/
+            /*section.style3 {max-width:100%; margin:30px auto; padding:30px; }
+            */table {
+                width: 100%;
+            }
+            th, td {
+                padding: 10px;
+                border: 1px solid #ddd;
+            }
+            th {
+                background: #f4f4f4;
+            }
+            .demo02 th {
+                width: 13%;
+            }
+            .demo02 td {
+                text-align: center;
+            }/*
+            .demo02 td:first-child {
+                text-align: left;
+            }*/
+
+            @media only screen and (max-width: 300px) {
+                .demo02 {
+                    display: block;
+                    width: 100%;
+                    margin: 0 -10px;
+                }
+                .demo02 thead {
+                    display: block;
+                    float: left;
+                    /*overflow-x: scroll;*/
+                    width:30%;
+                }
+                .demo02 tbody {
+                    display: block;
+                    /*width: auto;*/
+                    overflow-x: auto;
+                    white-space: nowrap;
+                }
+                .demo02 th {
+                    display: block;
+                    width:200%;
+                }
+                .demo02 tbody tr {
+                    display: inline-block;
+                    margin: 0 -3px;
+                }
+                .demo02 td {
+                    display: block;
+                    width:250%;
+                }
+            }
+		</style>
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<section id="header" class="wrapper">
+
+				<!-- Logo -->
+				<div id="logo">
+					<h1><a href="index.html">Grade</a></h1>
+				</div>
+
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+								<li class="current"><a href="https://lecture.engintruder.com/index.html">Home</a></li>
+								<li><a href="https://lecture.engintruder.com/wm2019_1.html">WM Classroom</a></li>
+								<li><a href="https://lecture.engintruder.com/dv2019_1.html">DV Classroom</a></li>
+                                <li>
+								<a href="#">Grade</a>
+				                    <ul>
+								        <li><a href="http://engintruder.com/hansung/grade_wm.html">WM</a></li>
+								        <li><a href="http://engintruder.com/hansung/grade_dv.html">DV</a></li> 
+				                    </ul>
+								</li> 
+					</ul>
+				</nav>
+
+			</section> 
+             
+				<section id="highlights" class="wrapper style3">
+					<div class="title">DV Class(데이터 시각화)</div>
+					<div class="container">
+                        <form> 
+                            <label for="number">학번</label><input type="text" id="number"/>
+                            <label for="password">비밀번호(초기비밀번호 휴대폰번호 마지막 4자리)</label><input type="password" id="password"/>
+                            <a class="button style1" onclick="loading('gp')" style="width:100%;">결과 보기</a>
+                        </form>
+                        <div id="result" style="display:none;">
+                            <div>
+                                <section>
+                                    <table class="demo02">
+                                      <thead>
+                                        <tr>
+                                          <th>이름</th>
+                                          <th>중간고사</th>
+                                          <th>기말고사</th>
+                                          <th>과제</th>
+                                          <th>출석</th>
+                                          <th>총점</th> 
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr>
+                                          <td id="name">-</td>
+                                          <td id="mid">-</td>
+                                          <td id="final">-</td>
+                                          <td id="homework1">-</td>
+                                          <td id="attend">-</td>
+                                          <td id="total">-</td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                    <table class="demo02">
+										<tr>
+											<th>코멘트</th>
+										</tr>
+										<tr>
+											<td id="note"></td>
+										</tr>
+                                    </table>
+                                </section> 
+                            </div> 
+                        </div>  
+                        <form>
+                            <div id="ap" style="display:none;">
+                                <label for="beforePW">기존 비밀번호</label><input type="password" id="beforePW"/>
+                                <label for="afterPW">새로운 비밀번호</label><input type="password" id="afterPW"/>
+                                <a class="button style1" onclick="change()" style="width:100%;">비밀번호 변경하기</a> 
+                            </div>
+                        </form>
+					</div>
+				</section>  
+              
+            
+			<!-- Footer -->
+			<section id="footer" class="wrapper">
+				<div class="title">Contact</div>
+				<div class="container">
+					<header class="style1">
+						<h2>Kwangseob Kim(김광섭)</h2>
+						<p>
+							Dept. of Electronics and Information Engineering, Hansung University <br>
+							Full-time Researcher / Ph.D.
+						</p>
+					</header>
+					<div class="row"><!--
+							<div class="col-6 col-12-medium">
+
+									<section>
+										<form method="post" action="#">
+											<div class="row gtr-50">
+												<div class="col-6 col-12-small">
+													<input type="text" name="name" id="contact-name" placeholder="Name" />
+												</div>
+												<div class="col-6 col-12-small">
+													<input type="text" name="email" id="contact-email" placeholder="Email" />
+												</div>
+												<div class="col-12">
+													<textarea name="message" id="contact-message" placeholder="Message" rows="4"></textarea>
+												</div>
+												<div class="col-12">
+													<ul class="actions">
+														<li><input type="submit" class="style1" value="Send" /></li>
+														<li><input type="reset" class="style2" value="Reset" /></li>
+													</ul>
+												</div>
+											</div>
+										</form>
+									</section>
+
+							</div>-->
+						<div class="col-12 col-12-medium">
+
+							<!-- Contact -->
+							<section class="feature-list small">
+								<div class="row">
+									<div class="col-6 col-12-small">
+										<section>
+											<h3 class="icon fa-home">Mailing Address</h3>
+											<p>
+												116, Samseongyoro-16gil, Seongbuk-gu, Seoul 02876 Korea<br />
+												Engineering Building A(공학관 A동)<br />
+												300 (300호)
+											</p>
+										</section>
+									</div>
+									<div class="col-6 col-12-small">
+										<section>
+											<h3 class="icon fa-comment">Social</h3>
+											<p>
+												<a href="http://blog.engintruder.com" target="_blank">http://blog.engintruder.com</a><br />
+											</p>
+										</section>
+									</div>
+									<div class="col-6 col-12-small">
+										<section>
+											<h3 class="icon fa-envelope">Email</h3>
+											<p>
+												<a href="#">engkwangseob@gmail.com</a>
+											</p>
+										</section>
+									</div>
+									<div class="col-6 col-12-small">
+										<section>
+											<h3 class="icon fa-phone">Phone</h3>
+											<p>
+												(02) 760-5890
+											</p>
+										</section>
+									</div>
+								</div>
+							</section>
+
+						</div>
+					</div>
+					<div id="copyright">
+						<ul>
+							<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+            <script>
+                
+                function loading(type){
+                    
+                    var className = type;
+                    var number = $('#number').val();
+                    var password = $('#password').val(); 
+                    var name= $('#name');
+                    var mid = $('#mid');
+                    var final = $('#final');
+                    var homework1 = $('#homework1');
+                    var attend = $('#attend');
+                    var total = $('#total');
+                    var note = $('#note');
+                    name.html("");
+                    mid.html("");
+                    final.html("");
+                    homework1.html("");
+                    attend.html("");
+                    total.html("");
+                    note.html("");
+                    $('#result').css('display', 'none');
+                    $('#ap').css('display', 'none');
+                    $('#beforePW').val('');
+                    $('#afterPW').val('');
+                    $.ajax({ 
+                        url : 'http://seoul.engintruder.com/lecture/api/' + className + '/' + number + '/' + password,
+                 //              url : 'http://localhost:8080/api/' + className + '/' + number + '/' + password,
+                        type : 'GET',
+					    crossDomain:true,
+                        dataType : 'json',
+                        success : function(res){
+                            if ((res).hasOwnProperty('message')){
+                                alert(res.message);
+                                return 0;
+                            }                            
+                            $('#result').css('display', 'block');
+                            $('#ap').css('display', 'block');
+                            name.html(res.name);
+                            mid.html(res.midEx + '/35');
+                            final.html(res.finalEx + '/35');
+                            homework1.html(res.homework1 + '/20');
+                            attend.html(res.attendance + '/10');
+                            total.html(res.total + '/100');
+                            note.html(res.note);
+                        },
+                        error : function(err){
+                            console.log(err);
+                            alert("아이디/비밀번호를 다시 확인하세요");
+                        } 
+                    });
+                }
+                
+                function change(){
+                    var number = $('#number').val();
+                    var beforePW = $('#beforePW').val();
+                    var afterPW = $('#afterPW').val();
+                    var className = $('#className').val();
+                    
+                    $.ajax({
+                        url : 'http://seoul.engintruder.com/lecture/api/' + className + '/' + number + '/' + beforePW + '/' + afterPW,
+                        //url : 'http://localhost:8080/api/' + className + '/' + number + '/' + beforePW + '/' + afterPW,
+                        type : 'PUT',
+                        success : function(res){
+                            if ((res).hasOwnProperty('message')){
+                                alert("기존 비밀번호가 다릅니다.");
+                                return 0;
+                            }              
+                            if (res == 1){
+                                alert('비밀번호가 변경되었습니다');
+                                $('#beforePW').val('');
+                                $('#afterPW').val('');
+                            }
+                        },
+                        error : function(err){
+                            console.log(err);
+                            alert("기존 비밀번호가 다릅니다.");
+                        } 
+                    });
+                    
+                }
+                
+        
+            </script>
+	</body>
+</html>
