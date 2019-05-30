@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script type="text/javascript" src="d3/d3.js"></script>
+    <style>
+        .bar{
+            display: inline-block;
+            width: 20px;
+            height: 75px;
+            background-color: teal;
+        }  
+    </style>
+  </head>
+  <body>
+      <script>
+        var dataset=[ 5, 10, 15, 20, 25];
+        d3.select("body").selectAll("div")
+          .data(dataset)
+          .enter()
+          .append("div")
+          .attr("class", "bar");
+      </script>
+  </body>
+</html>
