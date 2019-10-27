@@ -156,7 +156,7 @@
                             <div id="ap" style="display:none;">
                                 <label for="beforePW">기존 비밀번호</label><input type="password" id="beforePW"/>
                                 <label for="afterPW">새로운 비밀번호</label><input type="password" id="afterPW"/>
-                                <a class="button style1" onclick="change()" style="width:100%;">비밀번호 변경하기</a> 
+                                <a class="button style1" onclick="change('si')" style="width:100%;">비밀번호 변경하기</a> 
                             </div>
                         </form>
 					</div>
@@ -292,11 +292,11 @@
                     });
                 }
                 
-                function change(){
+                function change(type){
                     var number = $('#number').val();
                     var beforePW = $('#beforePW').val();
                     var afterPW = $('#afterPW').val();
-                    var className = $('#className').val();
+                    var className = type;
                     
                     $.ajax({
                         url : 'http://seoul.engintruder.com/lectureAPI/api/' + className + '/' + number + '/' + beforePW + '/' + afterPW,
