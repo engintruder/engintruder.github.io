@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="c3.min.css" rel="stylesheet" />
+    <script src="d3.min.js"></script>
+    <script src="c3.min.js"></script>
+</head>
+<body>
+     <div id="chart"></div>
+     <div id="chart1"></div>
+     <div id="chart2"></div>
+    
+    <script>
+    var chart = c3.generate({
+        bindto: '#chart',
+        data: {
+          columns: [
+            ['data1', 30, 200, 100, 400, 150, 250],
+            ['data2', 50, 20, 10, 40, 15, 25]
+          ]
+        }
+    });
+        
+    var chart1 = c3.generate({
+        bindto: '#chart1',
+        data: {
+            columns: [
+                ['data1', 30],
+                ['data2', 120],
+            ],
+            type : 'donut',
+            onclick: function (d, i) { console.log("onclick", d, i); },
+            onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+            onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+        } 
+    });
+        
+        
+     var chart2 = c3.generate({
+        bindto: '#chart2',
+        data: {
+            columns: [
+                ['data1', 30, 200, 100, 400, 150, 250],
+                ['data2', 130, 100, 140, 200, 150, 50]
+            ],
+            type: 'bar'
+        },
+        bar: {
+            width: {
+                ratio: 0.5 // this makes bar width 50% f length between ticks
+                }
+            // or
+            //width: 100 // this makes bar width 100px
+        }
+    });
+    </script>
+</body>
+</html>
