@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    
+</head>
+<body>
+    <div>
+    <p>SVG width:420, height:150</p> 
+        <svg width="420" height="150">
+            <g>
+                <rect width="40" height="19"></rect>
+                <text x="45" y="12" dy="4">4 사과 (40) </text>
+            </g>
+            <g>
+                <rect width="80" height="19" y="20"></rect>
+                <text x="85" y="28" dy="8">8 바나나(80)</text>
+            </g>
+            <g>
+                <rect width="150" height="19" y="40"></rect>
+                <text x="155" y="48" dy="8">15 키위(150)</text>
+            </g>
+            <g>
+                <rect width="160" height="19" y="60"></rect>
+                <text x="165" y="68" dy="8">16 오렌지 (160)</text>
+            </g> 
+        </svg>
+    </div>
+    
+    <div>
+    <p>SVG width:500, height:200</p>
+    <p>x축 y축 색상 검은색 선 너비 :0.5</p>
+    <p>Start : 10, 120  End : 440, 80</p>
+        <svg width="500" height="200">
+            <line x1="5" y1="0" x2="5" y2="130" stroke="#000000" stroke-width="0.5"></line>
+            <line x1="0" y1="125" x2="450" y2="125" stroke="#000000" stroke-width="0.5"></line>
+             <polyline
+                 fill="none"
+                 stroke="#0074d9"
+                 stroke-width="2"
+                 points="
+                   10,120
+                   20,60
+                   40,80
+                   60,20
+                   80,80
+                   100,80
+                   120,60
+                   140,100
+                   160,90
+                   180,80
+                   200, 110
+                   220, 15
+                   240, 70
+                   260, 100
+                   280, 100
+                   300, 40
+                   320, 0
+                   340, 100
+                   360, 100
+                   380, 120
+                   400, 60
+                   420, 70
+                   440, 80
+                 "
+               /> 
+            <text x="60" y="18">(60,20)</text>
+            <text x="220" y="15">(220,15)</text>
+            <text x="380" y="119">(360,120)</text>
+        </svg>
+    </div> 
+    <div>
+    <p>SVG width:400, height:500</p>
+    <p>검은색 점 : 200 250</p>
+    <p>노란색 점 : 210 240</p>
+    <p>차트 반지름 : 100</p>
+        <svg width="400" height="400"> 
+        <defs>
+            <path id="textPath" 
+                  d="M 300 250 a100 100 0 1 1 -100 -100"/>
+            <path id="textPath1"
+                  d="M 210 140 a100 100 0 0 1 105 105"/>
+        </defs>
+            <path d="M 200 250, h 100 a100 100 0 1 1 -100 -100" fill="red"></path> 
+            <!-- 반지름, 반지름, x축 기울기, 호 생성방법, 시계방향, 끝점 -->
+            <path d="M 210 240, h 100 a100 100 0 0 0 -100 -100" fill="blue"></path>
+            
+            <text>
+                <textPath xlink:href="#textPath">
+                 전체 75%
+                </textPath>
+            </text>
+            <text transform="Rotate(90)">
+                <textPath xlink:href="#textPath1" 
+                          >
+                 전체 25%
+                </textPath>
+            </text>
+          
+            <circle cx="200" cy="250" r="5"
+                     fill="#000000" />
+            <circle cx="210" cy="240" r="5"
+                     fill="#FFFF00" />
+            
+            <!--
+            <circle cx="300" cy="250" r="5"
+                     fill="#000000" />
+            <circle cx="200" cy="150" r="5"
+                     fill="#000000" />
+            -->
+        </svg>
+    </div>
+</body>
+</html>
